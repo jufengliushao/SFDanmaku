@@ -18,6 +18,7 @@
 		E65AC3F11EEF93B2005DA358 /* SFBaseDanmukuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F01EEF93B2005DA358 /* SFBaseDanmukuView.m */; };
 		E65AC3F41EEF948D005DA358 /* SFDanmakuReuseFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F31EEF948D005DA358 /* SFDanmakuReuseFunction.m */; };
 		E65AC3F71EEF9B11005DA358 /* SFDanmakuInitFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F61EEF9B11005DA358 /* SFDanmakuInitFunction.m */; };
+		E65AC3FA1EEFC927005DA358 /* SFDanMuFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F91EEFC927005DA358 /* SFDanMuFunction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		E65AC3F31EEF948D005DA358 /* SFDanmakuReuseFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDanmakuReuseFunction.m; sourceTree = "<group>"; };
 		E65AC3F51EEF9B11005DA358 /* SFDanmakuInitFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDanmakuInitFunction.h; sourceTree = "<group>"; };
 		E65AC3F61EEF9B11005DA358 /* SFDanmakuInitFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDanmakuInitFunction.m; sourceTree = "<group>"; };
+		E65AC3F81EEFC927005DA358 /* SFDanMuFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDanMuFunction.h; sourceTree = "<group>"; };
+		E65AC3F91EEFC927005DA358 /* SFDanMuFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDanMuFunction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 		E65AC3EE1EEF9383005DA358 /* function */ = {
 			isa = PBXGroup;
 			children = (
+				E65AC3F81EEFC927005DA358 /* SFDanMuFunction.h */,
+				E65AC3F91EEFC927005DA358 /* SFDanMuFunction.m */,
 				E65AC3F21EEF948D005DA358 /* SFDanmakuReuseFunction.h */,
 				E65AC3F31EEF948D005DA358 /* SFDanmakuReuseFunction.m */,
 				E65AC3F51EEF9B11005DA358 /* SFDanmakuInitFunction.h */,
@@ -319,6 +324,7 @@
 				E65AC3BE1EEF9002005DA358 /* AppDelegate.m in Sources */,
 				E65AC3F11EEF93B2005DA358 /* SFBaseDanmukuView.m in Sources */,
 				E65AC3BB1EEF9002005DA358 /* main.m in Sources */,
+				E65AC3FA1EEFC927005DA358 /* SFDanMuFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
