@@ -15,6 +15,7 @@
 		E65AC3C91EEF9002005DA358 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65AC3C71EEF9002005DA358 /* LaunchScreen.storyboard */; };
 		E65AC3D41EEF9002005DA358 /* SFDanmakuDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3D31EEF9002005DA358 /* SFDanmakuDemoTests.m */; };
 		E65AC3DF1EEF9002005DA358 /* SFDanmakuDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3DE1EEF9002005DA358 /* SFDanmakuDemoUITests.m */; };
+		E65AC3F11EEF93B2005DA358 /* SFBaseDanmukuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F01EEF93B2005DA358 /* SFBaseDanmukuView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E65AC3DA1EEF9002005DA358 /* SFDanmakuDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFDanmakuDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65AC3DE1EEF9002005DA358 /* SFDanmakuDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SFDanmakuDemoUITests.m; sourceTree = "<group>"; };
 		E65AC3E01EEF9002005DA358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E65AC3EF1EEF93B2005DA358 /* SFBaseDanmukuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBaseDanmukuView.h; sourceTree = "<group>"; };
+		E65AC3F01EEF93B2005DA358 /* SFBaseDanmukuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBaseDanmukuView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 				E65AC3BF1EEF9002005DA358 /* ViewController.h */,
 				E65AC3C01EEF9002005DA358 /* ViewController.m */,
 				E65AC3C21EEF9002005DA358 /* Main.storyboard */,
+				E65AC3EC1EEF9383005DA358 /* SFDanmuku */,
 				E65AC3C51EEF9002005DA358 /* Assets.xcassets */,
 				E65AC3C71EEF9002005DA358 /* LaunchScreen.storyboard */,
 				E65AC3CA1EEF9002005DA358 /* Info.plist */,
@@ -138,6 +142,31 @@
 				E65AC3E01EEF9002005DA358 /* Info.plist */,
 			);
 			path = SFDanmakuDemoUITests;
+			sourceTree = "<group>";
+		};
+		E65AC3EC1EEF9383005DA358 /* SFDanmuku */ = {
+			isa = PBXGroup;
+			children = (
+				E65AC3ED1EEF9383005DA358 /* base */,
+				E65AC3EE1EEF9383005DA358 /* function */,
+			);
+			path = SFDanmuku;
+			sourceTree = "<group>";
+		};
+		E65AC3ED1EEF9383005DA358 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				E65AC3EF1EEF93B2005DA358 /* SFBaseDanmukuView.h */,
+				E65AC3F01EEF93B2005DA358 /* SFBaseDanmukuView.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		E65AC3EE1EEF9383005DA358 /* function */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = function;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +231,7 @@
 		E65AC3AE1EEF9002005DA358 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SF;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = lsf;
 				TargetAttributes = {
@@ -275,6 +305,7 @@
 			files = (
 				E65AC3C11EEF9002005DA358 /* ViewController.m in Sources */,
 				E65AC3BE1EEF9002005DA358 /* AppDelegate.m in Sources */,
+				E65AC3F11EEF93B2005DA358 /* SFBaseDanmukuView.m in Sources */,
 				E65AC3BB1EEF9002005DA358 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +540,7 @@
 				E65AC3E51EEF9002005DA358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E65AC3E61EEF9002005DA358 /* Build configuration list for PBXNativeTarget "SFDanmakuDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +549,7 @@
 				E65AC3E81EEF9002005DA358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E65AC3E91EEF9002005DA358 /* Build configuration list for PBXNativeTarget "SFDanmakuDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +558,7 @@
 				E65AC3EB1EEF9002005DA358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
