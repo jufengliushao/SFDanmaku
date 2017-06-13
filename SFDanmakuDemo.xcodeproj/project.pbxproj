@@ -16,6 +16,8 @@
 		E65AC3D41EEF9002005DA358 /* SFDanmakuDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3D31EEF9002005DA358 /* SFDanmakuDemoTests.m */; };
 		E65AC3DF1EEF9002005DA358 /* SFDanmakuDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3DE1EEF9002005DA358 /* SFDanmakuDemoUITests.m */; };
 		E65AC3F11EEF93B2005DA358 /* SFBaseDanmukuView.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F01EEF93B2005DA358 /* SFBaseDanmukuView.m */; };
+		E65AC3F41EEF948D005DA358 /* SFDanmakuReuseFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F31EEF948D005DA358 /* SFDanmakuReuseFunction.m */; };
+		E65AC3F71EEF9B11005DA358 /* SFDanmakuInitFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E65AC3F61EEF9B11005DA358 /* SFDanmakuInitFunction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		E65AC3E01EEF9002005DA358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E65AC3EF1EEF93B2005DA358 /* SFBaseDanmukuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFBaseDanmukuView.h; sourceTree = "<group>"; };
 		E65AC3F01EEF93B2005DA358 /* SFBaseDanmukuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFBaseDanmukuView.m; sourceTree = "<group>"; };
+		E65AC3F21EEF948D005DA358 /* SFDanmakuReuseFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDanmakuReuseFunction.h; sourceTree = "<group>"; };
+		E65AC3F31EEF948D005DA358 /* SFDanmakuReuseFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDanmakuReuseFunction.m; sourceTree = "<group>"; };
+		E65AC3F51EEF9B11005DA358 /* SFDanmakuInitFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDanmakuInitFunction.h; sourceTree = "<group>"; };
+		E65AC3F61EEF9B11005DA358 /* SFDanmakuInitFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDanmakuInitFunction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,10 @@
 		E65AC3EE1EEF9383005DA358 /* function */ = {
 			isa = PBXGroup;
 			children = (
+				E65AC3F21EEF948D005DA358 /* SFDanmakuReuseFunction.h */,
+				E65AC3F31EEF948D005DA358 /* SFDanmakuReuseFunction.m */,
+				E65AC3F51EEF9B11005DA358 /* SFDanmakuInitFunction.h */,
+				E65AC3F61EEF9B11005DA358 /* SFDanmakuInitFunction.m */,
 			);
 			path = function;
 			sourceTree = "<group>";
@@ -303,7 +313,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65AC3F71EEF9B11005DA358 /* SFDanmakuInitFunction.m in Sources */,
 				E65AC3C11EEF9002005DA358 /* ViewController.m in Sources */,
+				E65AC3F41EEF948D005DA358 /* SFDanmakuReuseFunction.m in Sources */,
 				E65AC3BE1EEF9002005DA358 /* AppDelegate.m in Sources */,
 				E65AC3F11EEF93B2005DA358 /* SFBaseDanmukuView.m in Sources */,
 				E65AC3BB1EEF9002005DA358 /* main.m in Sources */,
