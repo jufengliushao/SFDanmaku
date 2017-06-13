@@ -13,12 +13,12 @@
 /**
  nib文件数组
  */
-@property (nonatomic, strong) NSMutableArray *dm_nibArr;
+@property (nonatomic, strong) NSMutableDictionary *dm_nibDic;
 
 /**
  代码文件数组
  */
-@property (nonatomic, strong) NSMutableArray *dm_codeArr;
+@property (nonatomic, strong) NSMutableDictionary *dm_codeDic;
 @end
 
 SFDanmakuInitFunction *initF = nil;
@@ -36,45 +36,39 @@ SFDanmakuInitFunction *initF = nil;
 }
 
 #pragma mark - public method
-- (void)dm_registerFile:(NSString *)fileName type:(SFDM_INIT_TYPE)type{
-    if ([self dm_returnFileType:fileName]) {
-        // 如果文件已经注册过，不进行添加
-        return;
+- (void)dm_registerNibFile:(UINib *)nib identifier:(NSString *)identifier{
+    [self.dm_nibDic setObject:nib forKey:identifier];
+}
+
+- (void)dm_registerCodeFile:(Class)codeClass identifier:(NSString *)identifier{
+    [self.dm_codeDic setObject:codeClass forKey:identifier];
+}
+
+- (BOOL)dm_isexist:(NSString *)identifier{
+    return [self.dm_codeDic.allKeys containsObject:identifier] || [self.dm_nibDic.allKeys containsObject:identifier];
+}
+
+- (SFDM_INIT_TYPE)dm_returnFileType:(NSString *)identifier{
+    if ([self.dm_codeDic.allKeys containsObject:identifier]) {
+        return SFDM_INIT_TYPE_CODE;
     }
     
-    if (type == SFDM_INIT_TYPE_NIB) {
-        // nib
-        [self.dm_nibArr addObject:fileName];
-    }else if (type == SFDM_INIT_TYPE_CODE){
-        // code
-        [self.dm_codeArr addObject:fileName];
-    }
+    return SFDM_INIT_TYPE_NIB;
 }
-
-- (SFDM_INIT_TYPE)dm_returnFileType:(NSString *)file{
-    if ([self.dm_codeArr containsObject:file]) {
-        return SFDM_INIT_TYPE_CODE;
-    }else if ([self.dm_nibArr containsObject:file]){
-        return SFDM_INIT_TYPE_NIB;
-    }
-    return -1;
-}
-
-
 
 #pragma mark - private method
-- (NSMutableArray *)dm_nibArr{
-    if (!_dm_nibArr) {
-        _dm_nibArr = [NSMutableArray arrayWithCapacity:0];
+-(NSMutableDictionary *)dm_nibDic{
+    if (!_dm_nibDic) {
+        _dm_nibDic = [NSMutableDictionary dictionary];
     }
-    return _dm_nibArr;
+    return _dm_nibDic;
 }
 
 
-- (NSMutableArray *)dm_codeArr{
-    if (!_dm_codeArr) {
-        _dm_codeArr = [NSMutableArray arrayWithCapacity:0];
+- (NSMutableDictionary *)dm_codeDic{
+    if (!_dm_codeDic) {
+        _dm_codeDic = [NSMutableDictionary dictionary];
     }
-    return _dm_codeArr;
+    return _dm_codeDic;
 }
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SFBaseDanmukuView.h"
+#import "SFDanmakuInitFunction.h"
 @interface SFDanmakuReuseFunction : NSObject
 
 /**

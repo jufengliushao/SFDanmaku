@@ -24,18 +24,36 @@ typedef NS_ENUM(NSUInteger, SFDM_INIT_TYPE) {
 + (instancetype)shareInstance;
 
 /**
- 注册文件
+ 注册nib文件 
+ 此方法不进行重复性检查，请在调用此方法前进行检测
 
- @param fileName 文件名
- @param type 类型
+ @param nib UINib
+ @param identifier 重用
  */
-- (void)dm_registerFile:(NSString *)fileName type:(SFDM_INIT_TYPE)type;
+- (void)dm_registerNibFile:(UINib *)nib identifier:(NSString *)identifier;
+
+/**
+ 注册code文件
+ 此方法不进行重复性检查，请在调用此方法前进行检测
+
+ @param codeClass code-class
+ @param identifier 重用
+ */
+- (void)dm_registerCodeFile:(Class)codeClass identifier:(NSString *)identifier;
 
 /**
  返回对应文件名的类型
 
- @param file 文件名
+ @param identifier 文件名
  @return SFDM_INIT_TYPE
  */
-- (SFDM_INIT_TYPE)dm_returnFileType:(NSString *)file;
+- (SFDM_INIT_TYPE)dm_returnFileType:(NSString *)identifier;
+
+/**
+ identifier 重复性检验 唯一
+
+ @param identifier identifier
+ @return YES-重复 NO
+ */
+- (BOOL)dm_isexist:(NSString *)identifier;
 @end
