@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+@class SFBaseDanmukuView;
+
 @protocol SFDanmakuDelegate <NSObject>
 
 @optional
-
+/**
+ 返回每行的弹幕高度
+ default 60
+ @return 返回高度
+ */
+- (CGFloat)dm_heightForDMRowInScreenAtLine:(NSInteger)indexLine;
 
 @required
 /**
@@ -20,6 +27,14 @@
  @return 行数
  */
 - (NSInteger)dm_numberOfDMRowInScreen;
+
+/**
+ 返回对应的弹幕view
+
+ @param index 将要出现的弹幕的数量
+ @return SFBaseDanmukuView
+ */
+- (SFBaseDanmukuView *)dm_viewForRowAtIndex:(NSInteger)index;
 @end
 
 @interface SFDanMuFunction : NSObject
@@ -40,4 +55,6 @@
  @param identifier identifier 重用标识
  */
 - (void)dm_registerClass:(Class)viewClass forViewReuseIdentifier:(NSString *)identifier;
+
+- (SFBaseDanmukuView *)dm_dequeueReusableCellWithIdentifier:(NSString *)identifier forIndex:(NSInteger)index;
 @end

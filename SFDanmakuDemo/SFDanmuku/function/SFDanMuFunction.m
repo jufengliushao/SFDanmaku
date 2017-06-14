@@ -11,6 +11,8 @@
 #import "SFDanmakuHelper.h"
 @interface SFDanMuFunction(){
     NSUInteger _dm_lines;
+    CGFloat _dm_defaultHeight;
+    NSMutableArray *_dm_linesHeights;
 }
 
 @end
@@ -19,6 +21,9 @@
 #pragma mark - system method
 - (instancetype)init{
     if (self = [super init]) {
+        _dm_lines = 0;
+        _dm_defaultHeight = 60;
+        _dm_linesHeights = [NSMutableArray arrayWithCapacity:0];
         [self dm_delegate_initMethods];
     }
     return self;
@@ -47,10 +52,20 @@
 
 #pragma mark - SFDanmakuDelegate
 - (void)dm_delegate_initMethods{
+    // 获取屏幕高度
     if (self.delegate && [_delegate respondsToSelector:@selector(dm_numberOfDMRowInScreen)]) {
-        [self.delegate dm_numberOfDMRowInScreen];
+        _dm_lines = [self.delegate dm_numberOfDMRowInScreen];
     }else{
         Log(@"dm_numberOfDMRowInScreen %@", sf_waring_method);
+        return;
     }
+}
+
+#pragma mark - private method
+- (CGFloat)dm_private_heightLine:(NSInteger)line{
+    if (_delegate && [_delegate respondsToSelector:@selector(dm_heightForDMRowInScreenAtLine:)]) {
+        return [self.delegate dm_heightForDMRowInScreenAtLine:line];
+    }
+    return _dm_defaultHeight;
 }
 @end

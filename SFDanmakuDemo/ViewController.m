@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Log(@"dm_numberOfDMRowInScreen %@", sf_waring_method);
+    UITableView *ta;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
