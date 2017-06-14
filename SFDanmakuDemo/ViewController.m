@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "SFDanmakuHelper.h"
 @interface ViewController ()
 
 @end
@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    Log(@"dm_numberOfDMRowInScreen %@", sf_waring_method);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

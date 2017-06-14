@@ -22,6 +22,6 @@
  * 代码文件，初始化方法只能为 init 不能修改
  **
  */
-+(instancetype)initForNib:(NSString *)nibName;
++(instancetype)initForNib:(UINib *)nib;
 - (instancetype)init;
 @end

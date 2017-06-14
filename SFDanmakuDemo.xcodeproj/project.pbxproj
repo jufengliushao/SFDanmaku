@@ -63,6 +63,7 @@
 		E65AC3F61EEF9B11005DA358 /* SFDanmakuInitFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDanmakuInitFunction.m; sourceTree = "<group>"; };
 		E65AC3F81EEFC927005DA358 /* SFDanMuFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDanMuFunction.h; sourceTree = "<group>"; };
 		E65AC3F91EEFC927005DA358 /* SFDanMuFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDanMuFunction.m; sourceTree = "<group>"; };
+		E65AC4451EF118B7005DA358 /* SFDanmakuHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFDanmakuHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +159,7 @@
 			children = (
 				E65AC3ED1EEF9383005DA358 /* base */,
 				E65AC3EE1EEF9383005DA358 /* function */,
+				E65AC4441EF1189A005DA358 /* helper */,
 			);
 			path = SFDanmuku;
 			sourceTree = "<group>";
@@ -182,6 +184,14 @@
 				E65AC3F61EEF9B11005DA358 /* SFDanmakuInitFunction.m */,
 			);
 			path = function;
+			sourceTree = "<group>";
+		};
+		E65AC4441EF1189A005DA358 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				E65AC4451EF118B7005DA358 /* SFDanmakuHelper.h */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

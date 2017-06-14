@@ -16,8 +16,8 @@
     return self;
 }
 
-+ (instancetype)initForNib:(NSString *)nibName{
-    return [[NSBundle mainBundle] loadNibNamed:nibName owner:nil options:nil][0];
++(instancetype)initForNib:(UINib *)nib{
+    return [[nib instantiateWithOwner:nil options:nil] lastObject];
 }
 
 @end

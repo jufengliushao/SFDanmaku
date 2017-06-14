@@ -14,6 +14,12 @@
 
 
 @required
+/**
+ 返回屏幕上总共有多少行，默认为5行
+ 
+ @return 行数
+ */
+- (NSInteger)dm_numberOfDMRowInScreen;
 @end
 
 @interface SFDanMuFunction : NSObject
