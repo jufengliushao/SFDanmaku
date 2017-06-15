@@ -7,7 +7,7 @@
 //
 
 #import "SFDanmakuInitFunction.h"
-
+#import "SFDanmakuReuseFunction.h"
 @interface SFDanmakuInitFunction()
 
 /**
@@ -56,6 +56,10 @@ SFDanmakuInitFunction *initF = nil;
     return SFDM_INIT_TYPE_NIB;
 }
 
+- (__kindof SFBaseDanmukuView *)dm_returnDMView:(NSString *)identifier{
+    SFBaseDanmukuView *tmp_view = [[SFDanmakuReuseFunction shareInstance] dm_returnReuseView:identifier];
+    return tmp_view ? tmp_view : [self dm_private_createNewView:identifier];
+}
 #pragma mark - private method
 -(NSMutableDictionary *)dm_nibDic{
     if (!_dm_nibDic) {
@@ -70,5 +74,17 @@ SFDanmakuInitFunction *initF = nil;
         _dm_codeDic = [NSMutableDictionary dictionary];
     }
     return _dm_codeDic;
+}
+
+- (__kindof SFBaseDanmukuView *)dm_private_createNewView:(NSString *)identifier{
+    SFDM_INIT_TYPE dm_type = [self dm_returnFileType:identifier];
+    if (dm_type == SFDM_INIT_TYPE_NIB) {
+        UINib *tmp_nib = self.dm_nibDic[identifier];
+        return [[tmp_nib instantiateWithOwner:nil options:nil] lastObject];
+    }else if (dm_type == SFDM_INIT_TYPE_CODE){
+        Class tmp_class = self.dm_codeDic[identifier];
+        return [[tmp_class alloc] init];
+    }
+    return nil;
 }
 @end

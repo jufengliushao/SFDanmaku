@@ -49,7 +49,12 @@
     [[SFDanmakuReuseFunction shareInstance] dm_registerKey:identifier];
 }
 
-
+- (SFBaseDanmukuView *)dm_dequeueReusableCellWithIdentifier:(NSString *)identifier forIndex:(NSInteger)index{
+    if (![[SFDanmakuInitFunction shareInstance] dm_isexist:identifier]) {
+        return nil;
+    }
+    return [[SFDanmakuInitFunction shareInstance] dm_returnDMView:identifier];
+}
 #pragma mark - SFDanmakuDelegate
 - (void)dm_delegate_initMethods{
     // 获取屏幕高度

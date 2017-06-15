@@ -56,4 +56,14 @@ typedef NS_ENUM(NSUInteger, SFDM_INIT_TYPE) {
  @return YES-重复 NO
  */
 - (BOOL)dm_isexist:(NSString *)identifier;
+
+/**
+ 返回对应注册过的view
+
+ 注意:本方法不进行identifier的判断，需要在外面进行判断安全后在使用这个方法 为了减少不必要的判断
+ 
+ @param identifier 重用标识
+ @return SFBaseDanmukuView
+ */
+- (__kindof SFBaseDanmukuView *)dm_returnDMView:(NSString *)identifier;
 @end

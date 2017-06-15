@@ -56,5 +56,12 @@
  */
 - (void)dm_registerClass:(Class)viewClass forViewReuseIdentifier:(NSString *)identifier;
 
-- (SFBaseDanmukuView *)dm_dequeueReusableCellWithIdentifier:(NSString *)identifier forIndex:(NSInteger)index;
+/**
+ 返回对应的index的弹幕view
+
+ @param identifier 唯一标示
+ @param index index
+ @return SFBaseDanmukuView 的子类
+ */
+- (__kindof SFBaseDanmukuView *)dm_dequeueReusableCellWithIdentifier:(NSString *)identifier forIndex:(NSInteger)index;
 @end

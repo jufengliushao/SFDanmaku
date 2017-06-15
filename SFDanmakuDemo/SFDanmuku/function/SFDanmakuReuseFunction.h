@@ -34,6 +34,16 @@
 - (void)dm_addReuseView:(SFBaseDanmukuView *)baseView;
 
 /**
+ 返回可以重用的弹幕view
+
+ 注意:本方法不进行identifier的判断，需要在外面进行判断安全后在使用这个方法 为了减少不必要的判断
+ 
+ @param identifier 重用唯一标示
+ @return SFBaseDanmukuView
+ */
+- (__kindof SFBaseDanmukuView *)dm_returnReuseView:(NSString *)identifier;
+
+/**
  判断重用标识是否注册过
 
  @param key 重用标识

@@ -54,6 +54,10 @@ SFDanmakuReuseFunction *reuseF = nil;
     return [self.dm_reuseDic.allKeys containsObject:key];
 }
 
+- (SFBaseDanmukuView *)dm_returnReuseView:(NSString *)identifier{
+    NSMutableArray *reuses = self.dm_reuseDic[identifier];
+    return reuses.count > 0 ? [reuses firstObject] : nil;
+}
 #pragma mark - private method
 - (NSMutableDictionary *)dm_reuseDic{
     if (!_dm_reuseDic) {

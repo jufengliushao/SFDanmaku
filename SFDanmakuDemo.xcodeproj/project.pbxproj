@@ -119,6 +119,7 @@
 				E65AC3BF1EEF9002005DA358 /* ViewController.h */,
 				E65AC3C01EEF9002005DA358 /* ViewController.m */,
 				E65AC3C21EEF9002005DA358 /* Main.storyboard */,
+				E65AC4461EF233D6005DA358 /* view */,
 				E65AC3EC1EEF9383005DA358 /* SFDanmuku */,
 				E65AC3C51EEF9002005DA358 /* Assets.xcassets */,
 				E65AC3C71EEF9002005DA358 /* LaunchScreen.storyboard */,
@@ -192,6 +193,13 @@
 				E65AC4451EF118B7005DA358 /* SFDanmakuHelper.h */,
 			);
 			path = helper;
+			sourceTree = "<group>";
+		};
+		E65AC4461EF233D6005DA358 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
