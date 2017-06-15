@@ -39,6 +39,10 @@
     return 50;
 }
 
+- (CGFloat)dm_widthForDMViewAtIndex:(NSInteger)index{
+    return 200;
+}
+
 - (SFBaseDanmukuView *)dm_view:(SFDanMakuView *)dmView ForRowAtIndex:(NSInteger)index{
     SFDanmaTextView *view = [dmView dm_dequeueReusableCellWithIdentifier:@"aaaa" forIndex:index];
     return view;

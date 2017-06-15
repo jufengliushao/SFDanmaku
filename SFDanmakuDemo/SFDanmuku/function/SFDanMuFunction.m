@@ -15,6 +15,7 @@
 SFDanMuFunction *function = nil;
 
 @implementation SFDanMuFunction
+#pragma mark - system method
 + (instancetype)shareInstance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -25,5 +26,6 @@ SFDanMuFunction *function = nil;
     return function;
 }
 
+#pragma mark - publicj method
 
 @end

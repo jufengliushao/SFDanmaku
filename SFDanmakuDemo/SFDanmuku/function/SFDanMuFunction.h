@@ -11,5 +11,10 @@
 
 @interface SFDanMuFunction : NSObject
 
+/**
+ 初始化方法
 
+ @return instancetype
+ */
++ (instancetype)shareInstance;
 @end

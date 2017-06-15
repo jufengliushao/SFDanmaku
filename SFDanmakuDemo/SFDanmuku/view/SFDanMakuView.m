@@ -71,6 +71,16 @@
 - (void)dm_private_delegate_drawDMView:(NSInteger)index{
     if(self.delegate && [self.delegate respondsToSelector:@selector(dm_view:ForRowAtIndex:)]){
         SFBaseDanmukuView *tmpView = [self.delegate dm_view:self ForRowAtIndex:index];
+    }else{
+        Log(@"dm_view:ForRowAtIndex: %@", sf_waring_method);
+        return;
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(dm_widthForDMViewAtIndex:)]) {
+        CGFloat width = [self.delegate dm_widthForDMViewAtIndex:index];
+    }else{
+        Log(@"dm_widthForDMViewAtIndex: %@", sf_waring_method);
+        return;
     }
 }
 #pragma mark - private method

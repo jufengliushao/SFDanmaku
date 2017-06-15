@@ -36,6 +36,14 @@
  @return SFBaseDanmukuView
  */
 - (SFBaseDanmukuView *)dm_view:(SFDanMakuView *)dmView ForRowAtIndex:(NSInteger)index;
+
+/**
+ 返回对应弹幕的长度
+
+ @param index 第几条数据源
+ @return 宽度
+ */
+- (CGFloat)dm_widthForDMViewAtIndex:(NSInteger)index;
 @end
 
 
