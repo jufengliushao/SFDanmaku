@@ -23,5 +23,5 @@
  **
  */
 +(instancetype)initForNib:(UINib *)nib;
-- (instancetype)init;
+- (instancetype)initWithReuseIdentifier:(NSString *)identifier;
 @end

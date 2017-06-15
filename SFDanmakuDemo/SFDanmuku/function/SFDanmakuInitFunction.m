@@ -83,7 +83,7 @@ SFDanmakuInitFunction *initF = nil;
         return [[tmp_nib instantiateWithOwner:nil options:nil] lastObject];
     }else if (dm_type == SFDM_INIT_TYPE_CODE){
         Class tmp_class = self.dm_codeDic[identifier];
-        return [[tmp_class alloc] init];
+        return [[tmp_class alloc] initWithReuseIdentifier:identifier];
     }
     return nil;
 }

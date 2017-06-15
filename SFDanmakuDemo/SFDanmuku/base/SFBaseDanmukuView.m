@@ -9,9 +9,9 @@
 #import "SFBaseDanmukuView.h"
 
 @implementation SFBaseDanmukuView
-- (instancetype)init{
+- (instancetype)initWithReuseIdentifier:(NSString *)identifier{
     if (self = [super init]) {
-        self.reuseIdentifier = @"";
+        self.reuseIdentifier = identifier;
     }
     return self;
 }

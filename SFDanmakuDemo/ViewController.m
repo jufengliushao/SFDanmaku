@@ -8,15 +8,19 @@
 
 #import "ViewController.h"
 #import "SFDanmakuHelper.h"
-@interface ViewController ()
+#import "SFDanMakuView.h"
 
+#import "SFDanmaTextView.h"
+@interface ViewController ()<SFDanmakuDelegate>
+@property (nonatomic, strong) SFDanMakuView *dmFunction;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UITableView *ta;
+    self.dmFunction.delegate = self;
+    [self.dmFunction dm_registerClass:[SFDanmaTextView class] forViewReuseIdentifier:@"aaaa"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +30,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - SFDanmakuDelegate
+- (NSInteger)dm_numberOfDMRowInScreen{
+    return 1;
+}
+
+- (CGFloat)dm_heightForDMRowInScreenAtLine:(NSInteger)indexLine{
+    return 50;
+}
+
+- (SFBaseDanmukuView *)dm_view:(SFDanMakuView *)dmView ForRowAtIndex:(NSInteger)index{
+    SFDanmaTextView *view = [dmView dm_dequeueReusableCellWithIdentifier:@"aaaa" forIndex:index];
+    return view;
+}
+
+#pragma mark - private method
+-(SFDanMakuView *)dmFunction{
+    if (!_dmFunction) {
+        _dmFunction = [[SFDanMakuView alloc] init];
+    }
+    return _dmFunction;
+}
 @end
