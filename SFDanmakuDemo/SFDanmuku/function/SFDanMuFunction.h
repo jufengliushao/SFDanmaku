@@ -17,4 +17,11 @@
  @return instancetype
  */
 + (instancetype)shareInstance;
+
+/**
+ 初始化弹道数目
+
+ @param dms 弹道总数
+ */
+- (void)dm_function_initForDMs:(NSUInteger)dms;
 @end
