@@ -19,7 +19,7 @@ typedef struct {
 }DM_LINE_TYPE;
 
 @interface SFDanMuFunction(){
-    
+    NSInteger dm_totalLines;
 }
 @property (nonatomic, strong) NSMutableDictionary *dmStatusDic;
 
@@ -41,10 +41,14 @@ SFDanMuFunction *function = nil;
 
 #pragma mark - public method
 - (NSInteger)dm_returnDMLineEmpty{
+    for (int i = 0; i < dm_totalLines; i ++) {
+        // 寻找弹道
+    }
     return 1;
 }
 
 - (void)dm_function_initForDMs:(NSUInteger)dms{
+    dm_totalLines = dms;
     for (int i = 0; i < dms; i ++) {
         DM_LINE_TYPE line = {i, YES, 1};
         [self dm_private_saveLine:line];
