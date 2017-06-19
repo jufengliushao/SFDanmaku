@@ -43,6 +43,9 @@ SFDanMuFunction *function = nil;
 - (NSInteger)dm_returnDMLineEmpty{
     for (int i = 0; i < dm_totalLines; i ++) {
         // 寻找弹道
+        for (int i = 0; i < dm_totalLines; i ++) {
+            DM_LINE_TYPE line = [self dm_private_getLine:i];
+        }
     }
     return 1;
 }
