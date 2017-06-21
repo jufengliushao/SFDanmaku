@@ -41,13 +41,10 @@ SFDanMuFunction *function = nil;
 
 #pragma mark - public method
 - (NSInteger)dm_returnDMLineEmpty{
-    for (int i = 0; i < dm_totalLines; i ++) {
-        // 寻找弹道
-        for (int i = 0; i < dm_totalLines; i ++) {
-            DM_LINE_TYPE line = [self dm_private_getLine:i];
-        }
-    }
-    return 1;
+    // 寻找弹道
+    NSInteger aimLines = -1;
+    
+    return aimLines;
 }
 
 - (void)dm_function_initForDMs:(NSUInteger)dms{
@@ -74,5 +71,29 @@ SFDanMuFunction *function = nil;
     DM_LINE_TYPE line;
     [[self.dmStatusDic objectForKey:[NSNumber numberWithInteger:index]] getValue:&line];
     return line;
+}
+
+- (NSInteger)dm_priavte_getHeight{
+    NSInteger aimLines = -1;
+    for (int i = 0; i < dm_totalLines; i ++) {
+        DM_LINE_TYPE line = [self dm_private_getLine:i];
+        if(line.priority == 1){
+            aimLines = i; // 找到优先级为1 的弹幕
+            break;
+        }
+    }
+    return aimLines;
+}
+
+- (NSInteger)dm_private_getMiddle{
+    NSInteger aimLines = -1;
+    for (int i = 0; i < dm_totalLines; i ++) {
+        DM_LINE_TYPE line = [self dm_private_getLine:i];
+        if(line.priority == 2){
+            aimLines = i; // 找到优先级为1 的弹幕
+            break;
+        }
+    }
+    return aimLines;
 }
 @end
