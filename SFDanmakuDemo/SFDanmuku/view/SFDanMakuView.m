@@ -27,7 +27,7 @@
         _dm_lines = 0;
         _dm_defaultHeight = 60;
         _dm_linesHeights = [NSMutableArray arrayWithCapacity:0];
-        [self dm_delegate_initMethods];
+        [self dm_private_delegate_initMethods];
     }
     return self;
 }
@@ -58,8 +58,14 @@
     }
     return [[SFDanmakuInitFunction shareInstance] dm_returnDMView:identifier];
 }
+
+#pragma mark - private method
+
 #pragma mark - SFDanmakuDelegate
-- (void)dm_delegate_initMethods{
+/**
+ 初始化弹幕
+ */
+- (void)dm_private_delegate_initMethods{
     if (self.delegate && [_delegate respondsToSelector:@selector(dm_numberOfDMRowInScreen)]) {
         _dm_lines = [self.delegate dm_numberOfDMRowInScreen];
         [[SFDanMuFunction shareInstance] dm_function_initForDMs:_dm_lines]; // 初始化弹道
@@ -69,6 +75,11 @@
     }
 }
 
+/**
+ 获取展示的view
+
+ @param index <#index description#>
+ */
 - (void)dm_private_delegate_drawDMView:(NSInteger)index{
     if(self.delegate && [self.delegate respondsToSelector:@selector(dm_view:ForRowAtIndex:)]){
         SFBaseDanmukuView *tmpView = [self.delegate dm_view:self ForRowAtIndex:index];
@@ -84,12 +95,34 @@
         return;
     }
 }
-#pragma mark - private method
-- (CGFloat)dm_private_heightLine:(NSInteger)line{
+
+/**
+ 获取当前展示vie的时间
+
+ @param index <#index description#>
+ */
+- (void)dm_private_delegate_showTime:(NSInteger)index{
+    if(self.delegate && [self.delegate respondsToSelector:@selector(dm_showTimeSeconds:)]){
+        CGFloat time = [self.delegate dm_showTimeSeconds:index];
+    }else{
+        Log(@"dm_showTimeSeconds: %@", sf_waring_method);
+        return;
+    }
+}
+
+/**
+ 获得每个弹道的高度
+
+ @param line <#line description#>
+ @return <#return value description#>
+ */
+- (CGFloat)dm_private_delegate_heightLine:(NSInteger)line{
     if (_delegate && [_delegate respondsToSelector:@selector(dm_heightForDMRowInScreenAtLine:)]) {
         return [self.delegate dm_heightForDMRowInScreenAtLine:line];
     }
     return _dm_defaultHeight;
 }
+
+
 
 @end
