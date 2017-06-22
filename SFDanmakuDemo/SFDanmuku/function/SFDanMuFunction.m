@@ -42,8 +42,10 @@ SFDanMuFunction *function = nil;
 #pragma mark - public method
 - (NSInteger)dm_returnDMLineEmpty{
     // 寻找弹道
-    NSInteger aimLines = -1;
-    
+    NSInteger aimLines = [self dm_priavte_getHigh];
+    if (aimLines == -1) {
+        aimLines = [self dm_private_getMiddle];
+    }
     return aimLines;
 }
 
@@ -73,7 +75,7 @@ SFDanMuFunction *function = nil;
     return line;
 }
 
-- (NSInteger)dm_priavte_getHeight{
+- (NSInteger)dm_priavte_getHigh{
     NSInteger aimLines = -1;
     for (int i = 0; i < dm_totalLines; i ++) {
         DM_LINE_TYPE line = [self dm_private_getLine:i];
