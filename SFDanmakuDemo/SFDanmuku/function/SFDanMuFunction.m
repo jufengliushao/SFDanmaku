@@ -20,6 +20,7 @@ typedef struct {
 
 @interface SFDanMuFunction(){
     NSInteger dm_totalLines;
+    dispatch_queue_t seairalQueue;
 }
 @property (nonatomic, strong) NSMutableDictionary *dmStatusDic;
 

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SFBaseDanmukuView.h"
-
+#import "SFDanMuFunction.h"
 @class SFDanMakuView;
 
 @protocol SFDanmakuDelegate <NSObject>
@@ -44,6 +44,14 @@
  @return 宽度
  */
 - (CGFloat)dm_widthForDMViewAtIndex:(NSInteger)index;
+
+/**
+ 返回对应的弹幕展示时间
+
+ @param index 第几条数据源
+ @return 时间 单位s
+ */
+- (CGFloat)dm_showTimeSeconds:(NSInteger)index;
 @end
 
 

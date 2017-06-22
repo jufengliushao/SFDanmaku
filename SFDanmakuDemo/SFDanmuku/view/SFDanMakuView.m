@@ -62,6 +62,7 @@
 - (void)dm_delegate_initMethods{
     if (self.delegate && [_delegate respondsToSelector:@selector(dm_numberOfDMRowInScreen)]) {
         _dm_lines = [self.delegate dm_numberOfDMRowInScreen];
+        [[SFDanMuFunction shareInstance] dm_function_initForDMs:_dm_lines]; // 初始化弹道
     }else{
         Log(@"dm_numberOfDMRowInScreen %@", sf_waring_method);
         return;
